@@ -34,7 +34,6 @@ public class Usuario {
 	@Column(name="linkfoto", length=200)
 	private String linkFoto;
 	
-	
 	public int getId() {
 		return id;
 	}
