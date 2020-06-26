@@ -34,11 +34,12 @@ public class UsuarioController {
 				return ResponseEntity.ok(resultado);
 			}
 			else {
+				
 				return ResponseEntity.status(403).build(); // retorno "Forbidden"
 			}
 		}
 		else {
-			return ResponseEntity.notFound().build();   // retorno um status de "Não encontrado"
+			return ResponseEntity.status(404).build();   // retorno um status de "Não encontrado"
 		}
 		/*if (incompleto.getEmail() != null) {  // meu usuario do parametro vei com o email
 			System.out.println("Recuperando pelo email!!!!! ");
