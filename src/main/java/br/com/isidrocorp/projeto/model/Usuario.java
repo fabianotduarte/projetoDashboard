@@ -36,7 +36,7 @@ public class Usuario {
 	private String linkFoto;
 	
 	@JsonIgnoreProperties("listaUsuarios")
-	@ManyToOne()
+	@ManyToOne
 	private Departamento depto;
 	
 	
