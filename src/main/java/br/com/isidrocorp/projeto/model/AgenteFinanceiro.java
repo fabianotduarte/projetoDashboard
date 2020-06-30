@@ -1,11 +1,17 @@
 package br.com.isidrocorp.projeto.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="mtb310_ag_financeiro")
@@ -21,6 +27,19 @@ public class AgenteFinanceiro {
 	
 	@Column(name="volume_transacional")
 	private float volume;
+	
+	@JsonIgnoreProperties("agente")
+	@OneToMany(mappedBy="agente", cascade=CascadeType.ALL)
+	private List<Transacao> listaTransacoes;
+
+	
+	public List<Transacao> getListaTransacoes() {
+		return listaTransacoes;
+	}
+
+	public void setListaTransacoes(List<Transacao> listaTransacoes) {
+		this.listaTransacoes = listaTransacoes;
+	}
 
 	public int getId() {
 		return id;

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="mtb310_transaction")
 public class Transacao {
@@ -38,6 +40,7 @@ public class Transacao {
 	@Column(name="status")
 	private int   status;
 	
+	@JsonIgnoreProperties("listaTransacoes")
 	@ManyToOne
 	@JoinColumn(name="ag_financeiro")
 	private AgenteFinanceiro agente;
