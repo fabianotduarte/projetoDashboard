@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.isidrocorp.projeto.dao.AgenteFinanceiroDAO;
@@ -19,7 +20,7 @@ public class AgenteFinanceiroController {
 	@GetMapping("/agentesfinanceiros")
 	public ArrayList<AgenteFinanceiro> recuperarToTen(){
 		ArrayList<AgenteFinanceiro> lista ;
-		lista = (ArrayList<AgenteFinanceiro>)dao.findAllOrderByVolumeDesc();
+		lista = (ArrayList<AgenteFinanceiro>)dao.findAll();
 		return lista;
 	}
 
