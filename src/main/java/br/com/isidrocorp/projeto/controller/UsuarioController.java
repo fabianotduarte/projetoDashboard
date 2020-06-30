@@ -33,10 +33,9 @@ public class UsuarioController {
 		if (resultado != null) {  // achei um usuario no banco!
 			if (incompleto.getSenha().equals(resultado.getSenha())) { // as senhas coincidem??
 				resultado.setSenha("*******");
-				return ResponseEntity.ok(resultado);
+				return ResponseEntity.ok(resultado); // o correto é transformar isso num token
 			}
 			else {
-				
 				return ResponseEntity.status(403).build(); // retorno "Forbidden"
 			}
 		}
