@@ -20,7 +20,7 @@ public class AgenteFinanceiroController {
 	@GetMapping("/agentesfinanceiros")
 	public ArrayList<AgenteFinanceiro> recuperarTopTen(){
 		ArrayList<AgenteFinanceiro> lista ;
-		lista = (ArrayList<AgenteFinanceiro>)dao.findAll();
+		lista = (ArrayList<AgenteFinanceiro>)dao.findAllByOrderByVolumeDesc();
 		return lista;
 	}
 
