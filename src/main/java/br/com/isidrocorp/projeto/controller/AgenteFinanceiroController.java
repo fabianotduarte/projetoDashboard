@@ -18,7 +18,7 @@ public class AgenteFinanceiroController {
 	private AgenteFinanceiroDAO dao;
 	
 	@GetMapping("/agentesfinanceiros")
-	public ArrayList<AgenteFinanceiro> recuperarToTen(){
+	public ArrayList<AgenteFinanceiro> recuperarTopTen(){
 		ArrayList<AgenteFinanceiro> lista ;
 		lista = (ArrayList<AgenteFinanceiro>)dao.findAll();
 		return lista;
