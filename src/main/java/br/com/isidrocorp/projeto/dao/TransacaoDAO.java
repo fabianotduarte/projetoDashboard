@@ -12,5 +12,4 @@ import br.com.isidrocorp.projeto.model.Transacao;
 public interface TransacaoDAO extends CrudRepository<Transacao, Integer>{
 	@Query("SELECT new br.com.isidrocorp.projeto.dto.Contadores(t.status, count(t.status)) FROM Transacao t WHERE agente.id=:id GROUP BY status")
 	public ArrayList<Contadores> getTotaisPorId(@Param("id") int id);
-	
 }
